@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import '../styles/styles.css';
+import { withRouter } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
 export default class Home extends Component {
+    btnLoginClick = () =>{
+        let path = `modules`;
+        this.props.history.push(path);
+    }
     render() {
         return (
             <div>
@@ -137,7 +142,7 @@ export default class Home extends Component {
                                                                     </div>
 
                                                                     <div class="form-group text-center">
-                                                                        <button type="submit" class="btn btn-lg btn-primary btn-block mb-1 btnshadow">Login</button>
+                                                                        <button type="submit" class="btn btn-lg btn-primary btn-block mb-1 btnshadow"  onClick={this.btnLoginClick}>Login</button>
                                                                         <div className="floatl cpadding"> <input type="checkbox" class="form-check-input" id="exampleCheck1"></input></div>
                                                                         <div class="floatl cpadding1"> Remember me</div>
                                                                         <div class="floatr">  <a href="#" class="btn btn-link">Forget Password</a></div>                                                                    </div>

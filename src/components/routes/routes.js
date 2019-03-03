@@ -2,7 +2,7 @@ import React from "react";
 // import { Router, Route, Switch } from 'react-router';
 import { Route, HashRouter } from "react-router-dom";
 import Home from "../common/home";
-import ModulesView from '../common/list';
+import ModulesView from '../common/Modules';
 
 class Routes extends React.Component {
   render() {
