@@ -11,20 +11,20 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <div class="row no-gutters">
-          <div class="col-6 col-md-2">
+        <div className="row no-gutters">
+          <div className="col-6 col-md-2">
             <img src={logo} className="App-logo" alt="logo" />
           </div>
-          <div class="col-12 col-sm-6 col-md-10 headerbg" />
+          <div className="col-12 col-sm-6 col-md-10 headerbg" />
         </div>
 
         <div className="">
           <div className="col-sm-12 navbg">
             <div>
-              <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                <li class="nav-item">
+              <ul className="nav nav-pills" id="pills-tab" role="tablist">
+                <li className="nav-item">
                   <a
-                    class="nav-link active"
+                    className="nav-link active"
                     id="pills-home-tab"
                     data-toggle="pill"
                     href="#pills-home"
@@ -35,9 +35,9 @@ export default class Home extends Component {
                     Home
                   </a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <a
-                    class="nav-link"
+                    className="nav-link"
                     id="pills-about-tab"
                     data-toggle="pill"
                     href="#pills-about"
@@ -48,9 +48,9 @@ export default class Home extends Component {
                     About
                   </a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <a
-                    class="nav-link"
+                    className="nav-link"
                     id="pills-modules-tab"
                     data-toggle="pill"
                     href="#pills-modules"
@@ -61,9 +61,9 @@ export default class Home extends Component {
                     Modules
                   </a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <a
-                    class="nav-link"
+                    className="nav-link"
                     id="pills-contact-tab"
                     data-toggle="pill"
                     href="#pills-contact"
@@ -74,9 +74,9 @@ export default class Home extends Component {
                     Contact Us
                   </a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <a
-                    class="nav-link"
+                    className="nav-link"
                     id="pills-login-tab"
                     data-toggle="pill"
                     href="#pills-login"
@@ -92,16 +92,16 @@ export default class Home extends Component {
           </div>
 
           <div className="col-lg-12 contentbox">
-            <div class="tab-content" id="pills-tabContent">
+            <div className="tab-content" id="pills-tabContent">
               <div
-                class="tab-pane fade show active"
+                className="tab-pane fade show active"
                 id="pills-home"
                 role="tabpanel"
                 aria-labelledby="pills-home-tab"
               >
-                <div class="container">
-                  <div class="row contentpdng">
-                    <div class="col-sm-4">
+                <div className="container">
+                  <div className="row contentpdng">
+                    <div className="col-sm-4">
                       <h3>Column 1</h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -112,7 +112,7 @@ export default class Home extends Component {
                         ullamco laboris...
                       </p>
                     </div>
-                    <div class="col-sm-4">
+                    <div className="col-sm-4">
                       <h3>Column 2</h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -123,7 +123,7 @@ export default class Home extends Component {
                         ullamco laboris...
                       </p>
                     </div>
-                    <div class="col-sm-4">
+                    <div className="col-sm-4">
                       <h3>Column 3</h3>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -138,14 +138,14 @@ export default class Home extends Component {
                 </div>
               </div>
               <div
-                class="tab-pane fade"
+                className="tab-pane fade"
                 id="pills-about"
                 role="tabpanel"
                 aria-labelledby="pills-about-tab"
               >
-                <div class="container">
-                  <div class="row contentpdng">
-                    <div class="col-sm-12">
+                <div className="container">
+                  <div className="row contentpdng">
+                    <div className="col-sm-12">
                       <h3>About</h3>
                       <p>
                         Lorem Ipsum is simply dummy text of the printing and
@@ -169,16 +169,16 @@ export default class Home extends Component {
                 </div>
               </div>
               <div
-                class="tab-pane fade"
+                className="tab-pane fade"
                 id="pills-modules"
                 role="tabpanel"
                 aria-labelledby="pills-modules-tab"
               >
-                <div class="container">
-                  <div class="row contentpdng">
-                    <div class="col-sm-12">
+                <div className="container">
+                  <div className="row contentpdng">
+                    <div className="col-sm-12">
                       <h3>Modules</h3>
-                      <ul>
+                      <ul className="moduleList">
                         <li>
                           <input type="checkbox" name="vehicle1" value="Bike" />
                           Home
@@ -201,14 +201,14 @@ export default class Home extends Component {
                 </div>
               </div>
               <div
-                class="tab-pane fade"
+                className="tab-pane fade"
                 id="pills-contact"
                 role="tabpanel"
                 aria-labelledby="pills-contact-tab"
               >
-                <div class="container">
-                  <div class="row contentpdng">
-                    <div class="col-sm-12">
+                <div className="container">
+                  <div className="row contentpdng">
+                    <div className="col-sm-12">
                       <h3>Contact Us</h3>
                       <p>
                        Yoofoo technologies
@@ -218,59 +218,59 @@ export default class Home extends Component {
                 </div>
               </div>
               <div
-                class="tab-pane fade"
+                className="tab-pane fade"
                 id="pills-login"
                 role="tabpanel"
                 aria-labelledby="pills-login-tab"
               >
-                <div class="container">
-                  <div class="row contentpdng">
-                    <div class="col-sm-12">
+                <div className="container">
+                  <div className="row contentpdng">
+                    <div className="col-sm-12">
                       <div className="row">
                         <div className="col-sm-5 offset-md-4">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-heading">
-                                <h2 class="text-center">LOGIN</h2>
+                          <div className="modal-dialog">
+                            <div className="modal-content">
+                              <div className="modal-heading">
+                                <h2 className="text-center">LOGIN</h2>
                               </div>
 
-                              <div class="modal-body">
+                              <div className="modal-body">
                                 <form action="" role="form">
-                                  <div class="form-group">
-                                    <div class="input-group">
-                                      <span class="input-group-addon">
+                                  <div className="form-group">
+                                    <div className="input-group">
+                                      <span className="input-group-addon">
                                         <span
-                                          class="fa fa-user facolor"
+                                          className="fa fa-user facolor"
                                           aria-hidden="true"
                                         />
                                       </span>
                                       <input
                                         type="text"
-                                        class="form-control"
+                                        className="form-control"
                                         placeholder="User Name"
                                       />
                                     </div>
                                   </div>
-                                  <div class="form-group">
-                                    <div class="input-group">
-                                      <span class="input-group-addon">
+                                  <div className="form-group">
+                                    <div className="input-group">
+                                      <span className="input-group-addon">
                                         <span
-                                          class="fa fa-key facolor"
+                                          className="fa fa-key facolor"
                                           aria-hidden="true"
                                         />
                                       </span>
                                       <input
                                         type="password"
-                                        class="form-control"
+                                        className="form-control"
                                         placeholder="Password"
                                       />
                                     </div>
                                   </div>
 
-                                  <div class="form-group text-center">
+                                  <div className="form-group text-center">
                                     <button
                                       type="submit"
-                                      class="btn btn-lg btn-primary btn-block mb-1 btnshadow"
+                                      className="btn btn-lg btn-primary btn-block mb-1 btnshadow"
                                       onClick={this.btnLoginClick}
                                     >
                                       Login
@@ -279,17 +279,17 @@ export default class Home extends Component {
                                       {" "}
                                       <input
                                         type="checkbox"
-                                        class="form-check-input"
+                                        className="form-check-input"
                                         id="exampleCheck1"
                                       />
                                     </div>
-                                    <div class="floatl cpadding1">
+                                    <div className="floatl cpadding1">
                                       {" "}
                                       Remember me
                                     </div>
-                                    <div class="floatr">
+                                    <div className="floatr">
                                       {" "}
-                                      <a href="#" class="btn btn-link">
+                                      <a href="#" className="btn btn-link">
                                         Forget Password
                                       </a>
                                     </div>{" "}
@@ -307,13 +307,13 @@ export default class Home extends Component {
             </div>
           </div>
           <div className="footernav col-md-12">
-            <div class="row">
-              <div class="col-sm-6">
+            <div className="row">
+              <div className="col-sm-6">
                 <a href="#">Privacy Policy</a> | Copyright © 2019 ROGUE All
                 rights rserved
               </div>
-              <div class="col-sm-6 alignRight">
-                <b>Sandbox Mode</b> This site currently using sandbox2.
+              <div className="col-sm-6 alignRight">
+                {/* <b>Sandbox Mode</b> This site currently using sandbox2. */}
               </div>
             </div>
           </div>

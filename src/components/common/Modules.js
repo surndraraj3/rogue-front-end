@@ -126,7 +126,7 @@ export default class ModulesView extends Component {
                 rights rserved
               </div>
               <div className="col-sm-6 alignRight">
-                <b>Sandbox Mode</b> This site currently using sandbox2.
+                {/* <b>Sandbox Mode</b> This site currently using sandbox2. */}
               </div>
             </div>
           </div>

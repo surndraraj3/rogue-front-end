@@ -60,7 +60,7 @@ export default class Home extends Component {
                                 <a href="#">Privacy Policy</a>  | Copyright © 2019 ROGUE All rights rserved
                                 </div>
                                 <div class="col-sm-6 alignRight">
-                                <b>Sandbox Mode</b> This site currently using sandbox2.
+                                {/* <b>Sandbox Mode</b> This site currently using sandbox2. */}
                                 </div>
                             </div>
                         </div>
