@@ -67,7 +67,7 @@ export default class Home extends Component {
           <div className="col-12 col-sm-6 col-md-10 headerbg" />
         </div>
 
-        <div className="">
+        <div>
           <div className="col-sm-12 navbg">
             <div>
               <ul className="nav nav-pills" id="pills-tab" role="tablist">
@@ -260,6 +260,9 @@ export default class Home extends Component {
                     <div className="col-sm-12">
                       <h3>Contact Us</h3>
                       <p>Yoofoo technologies</p>
+                      <p>
+                        Yoofoo technologies
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -363,6 +366,13 @@ export default class Home extends Component {
                                     <div />
                                   )}
                                 </div>
+                                    <div className="floatr">
+                                      {" "}
+                                      <a href="#" className="btn btn-link">
+                                        Forgot Password
+                                      </a>
+                                    </div>{" "}
+                                  </div>
                               </div>
                             </div>
                           </div>
@@ -386,7 +396,7 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
-      </div>
+      
     );
   }
 }
