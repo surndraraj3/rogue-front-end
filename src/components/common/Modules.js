@@ -48,6 +48,8 @@ export default class ModulesView extends Component {
     //
     localStorage.setItem("ModulesList", JSON.stringify(arrModules));
     this.setState({ msgModules: true });
+    let path = `sidenav`;
+        this.props.history.push(path);
     // } else{
     //     this.setState({ msgChkbox: true});
     // }
@@ -90,7 +92,7 @@ export default class ModulesView extends Component {
                             className="btn btn-primary btn-sm btn-block"
                             onClick={this.handleFormSubmit}
                           >
-                            Save
+                            Ok
                           </button>
                         </div>
                         <br />
