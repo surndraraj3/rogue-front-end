@@ -16,7 +16,7 @@ const items = [
 export default class ModulesView extends Component {
   state = {
     msgModules: false,
-    msgChkbox: false,
+    msgChkbox: false
   };
   componentWillMount = () => {
     this.selectedCheckboxes = new Set();
@@ -33,19 +33,18 @@ export default class ModulesView extends Component {
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
     let arrModules = [];
-    console.log('checkbox', this.selectedCheckboxes.has());
+    console.log("checkbox", this.selectedCheckboxes.has());
     //if(this.selectedCheckboxes.has()) {
-        for (const checkbox of this.selectedCheckboxes) {
-            console.log(checkbox, "is selected.");
-            arrModules.push(checkbox);
-          }
-          //
-          localStorage.setItem("ModulesList", JSON.stringify(arrModules));
-          this.setState({ msgModules: true });
+    for (const checkbox of this.selectedCheckboxes) {
+      console.log(checkbox, "is selected.");
+      arrModules.push(checkbox);
+    }
+    //
+    localStorage.setItem("ModulesList", JSON.stringify(arrModules));
+    this.setState({ msgModules: true });
     // } else{
     //     this.setState({ msgChkbox: true});
     // }
-    
   };
 
   createCheckbox = label => (
@@ -77,7 +76,6 @@ export default class ModulesView extends Component {
                     <div className="row">
                       <div className="col-sm-12">
                         {this.createCheckboxes()}
-
                         {/* <button className="btn btn-default" type="submit">Save</button> */}
                         <div className="savebtn col-md-6">
                           <button
@@ -89,19 +87,21 @@ export default class ModulesView extends Component {
                           </button>
                         </div>
                         <br />
-                        <br />&nbsp;
+                        <br />
+                        &nbsp;
                         {this.state.msgModules ? (
                           <div className="row">
-                         
-                            <div className="col-sm-12 alert alert-danger" role="alert">
-                              You don't have privilege to access the modules,
-                              Please contact administrator
+                            <div
+                              className="col-sm-12 alert alert-danger"
+                              role="alert"
+                            >
+                              Access denied due to the lack of roles and permission by the
+                              current user to access the plugin
                             </div>
                           </div>
                         ) : (
                           <div />
                         )}
-                        
                       </div>
                     </div>
                   </div>
