@@ -7,13 +7,13 @@ const usersJson = [
   {
     username: "surendra",
     password: "123",
-    role:"user",
+    role: "user",
     menuList: ["Organisation", "Comissions", "Events"]
   },
   {
     username: "jeff",
     password: "123",
-    role:"enterprise_admin",
+    role: "enterprise_admin",
     menuList: [
       "Organisation",
       "Comissions",
@@ -38,7 +38,7 @@ export default class Home extends Component {
     usersList: [],
     errMsgLoginStatus: false
   };
-  componentDidMount() {    
+  componentDidMount() {
     this.setState({ usersList: usersJson });
   }
   btnLoginClick = () => {
@@ -48,7 +48,6 @@ export default class Home extends Component {
         let path = `modules`;
         this.props.history.push(path);
         localStorage.setItem("UserDetails", JSON.stringify(userDt.menuList));
-       
       } else {
         this.setState({ errMsgLoginStatus: true });
       }
@@ -353,16 +352,16 @@ export default class Home extends Component {
                                 <br />
                                 <br />
                                 <div className="col-md-12">
-                                {this.state.errMsgLoginStatus ? (
-                                  <div
-                                    className="alert alert-danger"
-                                    role="alert"
-                                  >
-                                    Invalid Login details
-                                  </div>
-                                ) : (
-                                  <div />
-                                )}
+                                  {this.state.errMsgLoginStatus ? (
+                                    <div
+                                      className="alert alert-danger"
+                                      role="alert"
+                                    >
+                                      Invalid Login details
+                                    </div>
+                                  ) : (
+                                    <div />
+                                  )}
                                 </div>
                               </div>
                             </div>
