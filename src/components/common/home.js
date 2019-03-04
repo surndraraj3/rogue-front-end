@@ -3,12 +3,62 @@ import "../styles/styles.css";
 import { withRouter } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
+const usersJson = [
+  {
+    username: "surendra",
+    password: "123",
+    role:"user",
+    menuList: ["Organisation", "Comissions", "Events"]
+  },
+  {
+    username: "jeff",
+    password: "123",
+    role:"enterprise_admin",
+    menuList: [
+      "Organisation",
+      "Comissions",
+      "Events",
+      "Orders",
+      "Resources",
+      "Store",
+      "Company News"
+    ]
+  },
+  {
+    username: "vikram",
+    password: "123",
+    menuList: ["Organisation", "Resources", "Store", "Company News"]
+  }
+];
+
 export default class Home extends Component {
+  state = {
+    userName: "",
+    userPass: "",
+    usersList: [],
+    errMsgLoginStatus: false
+  };
+  componentDidMount() {    
+    this.setState({ usersList: usersJson });
+  }
   btnLoginClick = () => {
-    let path = `modules`;
-    this.props.history.push(path);
+    this.state.usersList.map(userDt => {
+      if (userDt.username === this.state.userName) {
+        // console.log("true");
+        let path = `modules`;
+        this.props.history.push(path);
+        localStorage.setItem("UserDetails", JSON.stringify(userDt.menuList));
+       
+      } else {
+        this.setState({ errMsgLoginStatus: true });
+      }
+    });
+    return;
+    // let path = `modules`;
+    // this.props.history.push(path);
   };
   render() {
+    // console.log("user List", this.state.usersList);
     return (
       <div>
         <div className="row no-gutters">
@@ -189,7 +239,7 @@ export default class Home extends Component {
                         </li>
                         <li>
                           <input type="checkbox" name="vehicle1" value="Bike" />
-                         About Us
+                          About Us
                         </li>
                         <li>
                           <input type="checkbox" name="vehicle1" value="Bike" />
@@ -210,9 +260,7 @@ export default class Home extends Component {
                   <div className="row contentpdng">
                     <div className="col-sm-12">
                       <h3>Contact Us</h3>
-                      <p>
-                       Yoofoo technologies
-                      </p>                     
+                      <p>Yoofoo technologies</p>
                     </div>
                   </div>
                 </div>
@@ -235,66 +283,87 @@ export default class Home extends Component {
                               </div>
 
                               <div className="modal-body">
-                                <form action="" role="form">
-                                  <div className="form-group">
-                                    <div className="input-group">
-                                      <span className="input-group-addon">
-                                        <span
-                                          className="fa fa-user facolor"
-                                          aria-hidden="true"
-                                        />
-                                      </span>
-                                      <input
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="User Name"
+                                <div className="form-group">
+                                  <div className="input-group">
+                                    <span className="input-group-addon">
+                                      <span
+                                        className="fa fa-user facolor"
+                                        aria-hidden="true"
                                       />
-                                    </div>
+                                    </span>
+                                    <input
+                                      type="text"
+                                      className="form-control"
+                                      placeholder="User Name"
+                                      value={this.state.userName}
+                                      onChange={e =>
+                                        this.setState({
+                                          userName: e.target.value
+                                        })
+                                      }
+                                    />
                                   </div>
-                                  <div className="form-group">
-                                    <div className="input-group">
-                                      <span className="input-group-addon">
-                                        <span
-                                          className="fa fa-key facolor"
-                                          aria-hidden="true"
-                                        />
-                                      </span>
-                                      <input
-                                        type="password"
-                                        className="form-control"
-                                        placeholder="Password"
+                                </div>
+                                <div className="form-group">
+                                  <div className="input-group">
+                                    <span className="input-group-addon">
+                                      <span
+                                        className="fa fa-key facolor"
+                                        aria-hidden="true"
                                       />
-                                    </div>
+                                    </span>
+                                    <input
+                                      type="password"
+                                      className="form-control"
+                                      placeholder="Password"
+                                      value={this.state.userPass}
+                                      onChange={p =>
+                                        this.setState({
+                                          userPass: p.target.value
+                                        })
+                                      }
+                                    />
                                   </div>
+                                </div>
 
-                                  <div className="form-group text-center">
-                                    <button
-                                      type="submit"
-                                      className="btn btn-lg btn-primary btn-block mb-1 btnshadow"
-                                      onClick={this.btnLoginClick}
-                                    >
-                                      Login
-                                    </button>
-                                    <div className="floatl cpadding">
-                                      {" "}
-                                      <input
-                                        type="checkbox"
-                                        className="form-check-input"
-                                        id="exampleCheck1"
-                                      />
-                                    </div>
-                                    <div className="floatl cpadding1">
-                                      {" "}
-                                      Remember me
-                                    </div>
-                                    <div className="floatr">
-                                      {" "}
-                                      <a href="#" className="btn btn-link">
-                                        Forget Password
-                                      </a>
-                                    </div>{" "}
+                                <div className="form-group text-center">
+                                  <button
+                                    type="submit"
+                                    className="btn btn-lg btn-primary btn-block mb-1 btnshadow"
+                                    onClick={this.btnLoginClick}
+                                  >
+                                    Login
+                                  </button>
+                                  <div className="floatl cpadding">
+                                    <input
+                                      type="checkbox"
+                                      className="form-check-input"
+                                      id="exampleCheck1"
+                                    />
                                   </div>
-                                </form>
+                                  <div className="floatl cpadding1">
+                                    Remember me
+                                  </div>
+                                  <div className="floatr">
+                                    <a href="#" className="btn btn-link">
+                                      Forget Password
+                                    </a>
+                                  </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div className="col-md-12">
+                                {this.state.errMsgLoginStatus ? (
+                                  <div
+                                    className="alert alert-danger"
+                                    role="alert"
+                                  >
+                                    Invalid Login details
+                                  </div>
+                                ) : (
+                                  <div />
+                                )}
+                                </div>
                               </div>
                             </div>
                           </div>

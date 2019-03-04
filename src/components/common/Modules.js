@@ -16,10 +16,16 @@ const items = [
 export default class ModulesView extends Component {
   state = {
     msgModules: false,
-    msgChkbox: false
+    msgChkbox: false,
+    menuList: null
   };
   componentWillMount = () => {
     this.selectedCheckboxes = new Set();
+    const userMenu = localStorage.getItem('UserDetails');
+    if (userMenu) {
+      this.setState({ menuList: JSON.parse(userMenu) });
+      return;
+    }
   };
 
   toggleCheckbox = label => {
@@ -55,8 +61,9 @@ export default class ModulesView extends Component {
     />
   );
 
-  createCheckboxes = () => items.map(this.createCheckbox);
+  createCheckboxes = () => this.state.menuList.map(this.createCheckbox);
   render() {
+    console.log('menuList', this.state.menuList);
     return (
       <div>
         <div className="row no-gutters">
