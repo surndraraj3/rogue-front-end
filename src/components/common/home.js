@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../styles/styles.css";
 import { withRouter } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import UserRegistration from './registration';
 
 const usersJson = [
   {
@@ -151,7 +152,8 @@ export default class Home extends Component {
                 <div className="container">
                   <div className="row contentpdng">
                     <div className="col-sm-4">
-                      <h3>Column 1</h3>
+                      <h3>User Registration</h3>
+                      <UserRegistration />
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit...
