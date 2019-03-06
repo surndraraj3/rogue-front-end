@@ -279,7 +279,7 @@ box-shadow:         0px 4px 2px rgba(50, 50, 50, 0.75);
     padding-top: 10px;
 }
 .cardheaderbg{
-    background-color: #e4e4e4;
+    background-color: #dbdbdb;
     font-size: 16px;
     font-weight: bold;
     color: #218bed;
@@ -306,6 +306,8 @@ box-shadow:         0px 4px 2px rgba(50, 50, 50, 0.75);
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: solid 5px #76b1e7;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 .viewallbr{
     border-top: solid 1px #ccc;
@@ -315,6 +317,7 @@ box-shadow:         0px 4px 2px rgba(50, 50, 50, 0.75);
     background-color: #599fd0;
     padding-bottom: 15px;
     border-radius: 6px;
+    background-image: linear-gradient(to right top, #6ec8e5, #62bbdf, #5aadd9, #54a0d1, #5292c9);
 }
 .currenttext{
     color: #fff;    
@@ -340,6 +343,7 @@ box-shadow:         0px 4px 2px rgba(50, 50, 50, 0.75);
     padding-top: 15px;
     padding-bottom: 10px;
     font-size: 14px;
+    color: #575757;
 }
 .font13{
     font-size: 13px;
@@ -396,15 +400,16 @@ box-shadow:         0px 4px 2px rgba(50, 50, 50, 0.75);
     padding-top: 0px;
 }
 .Promotionbg{
-    margin: 35px 0 20px 0;
+    margin: 30px 0 10px 0;
     background-color: #218bed;
-    min-height: 180px;
+    min-height: 170px;
     min-width: 50px;
     text-align: center;
     font-size: 40px;
     color: #fff;
     font-weight: bold;
-    padding-top: 60px;
+    padding-top: 50px;
+    background-image: linear-gradient(to top, #6ec8e5, #62bbdf, #5aadd9, #54a0d1, #5292c9);
 }
 .tablehdr{
     font-size: 13px;
@@ -430,12 +435,95 @@ box-shadow:         0px 4px 2px rgba(50, 50, 50, 0.75);
     font-size: 16px;
 }
 .cartgry{
-    color: #515151;
+    color: #20afb7;
     font-size: 22px;
 }
 .table td, .table th {
     padding: 0.45rem;
 }
 .tablecnt{
-    min-height: 250px;
+    min-height: 220px;
+}
+.my-custom-scrollbar {
+    position: relative;
+    height: 287px;
+    overflow: auto;
+  }
+  .table-wrapper-scroll-y {
+    display: block;
+    overflow-x: hidden;
+  }
+  .yourteam{
+      margin: 0;
+      padding: 0;
+  }
+  .yourteam ul{
+    margin: 0;
+    padding-top: 5px;
+    padding-left: 25px;
+}
+.yourteam ul li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 13px;
+    color: #3a3a3a;
+    border-bottom: solid 1px #c8c8c8;
+}
+.orderno{
+    font-size: 12px;
+    color: #218bed;
+   font-weight: 700;
+   padding-top: 5px;
+   padding-left: 17px;
+}
+.orderdate{
+    font-size: 12px;
+    color: #767676;
+    padding-right: 10px;
+}
+.arrowr{
+    font-size: 14px;
+    color: #767676;
+    margin-right: 5px;
+}
+.box-shadow{
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(117,117,117,1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(117,117,117,1);
+    box-shadow: 0px 2px 5px 0px rgba(117,117,117,1);
+    border-bottom: 0;
+}
+.profileimg{
+    width: 50px;
+    height: 50px;;
+   margin: 10px 0 0 15px;
+}
+.profilehdr{
+    font-size: 12px;
+    font-weight: bold;
+    color: #218bed;
+    padding-top: 15px;
+}
+.proid{
+    font-size: 12px;
+    color: #767676;
+    font-weight: bold;
+}
+.well-sm {
+    padding: 9px;
+    border-radius: 3px;
+}
+.well {
+    min-height: 6px;
+    padding: 0px;
+    margin: 4px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+.btmmrgn{
+    margin-bottom: 30px;
 }
