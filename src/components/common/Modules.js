@@ -80,7 +80,7 @@ export default class ModulesView extends Component {
             <div className="container">
               <div className="row contentpdng offset-md-4">
                 <div className="col-sm-6 moduleslist">
-                  <h3>Modules List</h3>
+                  <h3>Modules List1</h3>
                   <div className="container">
                     <div className="row">
                       <div className="col-sm-12">

@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import UserRegistration from './registration';
 import AdminMenu from './addMenu';
+import ModulesList from './moduleList';
 
 const usersJson = [
   {
@@ -214,7 +215,8 @@ export default class Home extends Component {
                   <div className="row contentpdng">
                     <div className="col-sm-12">
                       <h3>Modules</h3>
-                      <ul className="moduleList">
+                      <ModulesList />
+                      {/* <ul className="moduleList">
                         <li>
                           <input type="checkbox" name="vehicle1" value="Bike" />
                           Home
@@ -231,7 +233,7 @@ export default class Home extends Component {
                           <input type="checkbox" name="vehicle1" value="Bike" />
                           Login
                         </li>
-                      </ul>
+                      </ul> */}
                     </div>
                   </div>
                 </div>
