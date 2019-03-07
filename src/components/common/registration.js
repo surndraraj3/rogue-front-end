@@ -15,7 +15,8 @@ export default class UserRegistration extends Component {
       mobile_no: "",
       packageType: "Basic",
       status: "Active",
-      creditCardNumber: ""
+      creditCardNumber: "",
+      roleName: ""
     };
   }
   componentDidMount() {    
@@ -32,7 +33,8 @@ export default class UserRegistration extends Component {
         packageType: this.state.packageType,
         status: "Active",
         userName: this.state.userName,
-        userPassword: this.state.userPassword
+        userPassword: this.state.userPassword,
+        role: this.state.roleName
       })
       .then(res => {
         //on success
@@ -194,6 +196,25 @@ export default class UserRegistration extends Component {
                 value={this.state.creditCardNumber}
                 onChange={c =>
                   this.setState({ creditCardNumber: c.target.value })
+                }
+              />
+            </div>
+          </div>
+          <div className="form-group">
+            <div className="input-group">
+              <span className="input-group-addon">
+                <span
+                  className="fa fa-credit-card facolor"
+                  aria-hidden="true"
+                />
+              </span>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Role "
+                value={this.state.roleName}
+                onChange={k =>
+                  this.setState({ roleName: k.target.value })
                 }
               />
             </div>

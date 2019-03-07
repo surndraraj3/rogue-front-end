@@ -17,7 +17,7 @@ const usersJson = [
   {
     username: "jeff",
     password: "123",
-    role: "enterprise_admin",
+    role: "admin",
     menuList: [
       "Organisation",
       "Comissions",

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import axios from "axios";
 import logo from "../../assets/logo.png";
 
 export default class SidenavBar extends Component {
   state = {
     msgModules: false,
     msgChkbox: false,
-    menuList: null
+    menuList: null,
+    menuDt: []
   };
   componentWillMount = () => {
     this.selectedCheckboxes = new Set();
@@ -17,53 +19,101 @@ export default class SidenavBar extends Component {
   };
   // Load side bnav bar details
   loadSideNav = () => {
-    return this.state.menuList.map(dt => (
-      <div className="card">
-        <div className="card-header cardpdng" id={dt}>
-          <h5 class="mb-0">
-            <button
-              class="btn btn-link collapsed"
-              data-toggle="collapse"
-              data-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-            >
-              {/* <i class="fa fa-percent fafont" aria-hidden="true" /> */}
-              {dt}
-              <i class="fa fa-caret-down expandarw" aria-hidden="true" />
-            </button>
-          </h5>
-        </div>
-        <div
-          id="collapseTwo"
-          class="collapse"
-          aria-labelledby={dt}
-          data-parent="#accordion"
-        >
-          <div class="card-body">
-            <div>
-              <ul>
-                <li>
-                  <i class="fa fa-angle-right farightarw" aria-hidden="true" />
-                  <a href="#">Commissions</a>
-                </li>
-                <li>
-                  <i class="fa fa-angle-right farightarw" aria-hidden="true" />
-                  <a href="#">Rank Advancement</a>
-                </li>
-                <li>
-                  <i class="fa fa-angle-right farightarw" aria-hidden="true" />
-                  <a href="#">Volumes</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    return this.state.menuDt.map(k => (
+      <p>{k.menuName}</p>
+    ));
+    // return this.state.menuList.map(dt => (
+    //   <div className="card">
+    //     <div className="card-header cardpdng" id={dt}>
+    //       <h5 class="mb-0">
+    //         <button
+    //           class="btn btn-link collapsed"
+    //           data-toggle="collapse"
+    //           data-target="#collapseTwo"
+    //           aria-expanded="false"
+    //           aria-controls="collapseTwo"
+    //         >
+    //           {/* <i class="fa fa-percent fafont" aria-hidden="true" /> */}
+    //           {dt}
+    //           <i class="fa fa-caret-down expandarw" aria-hidden="true" />
+    //         </button>
+    //       </h5>
+    //     </div>
+    //     <div
+    //       id="collapseTwo"
+    //       class="collapse"
+    //       aria-labelledby={dt}
+    //       data-parent="#accordion"
+    //     >
+    //       <div class="card-body">
+    //         <div>
+    //           <ul>
+    //             <li>
+    //               <i class="fa fa-angle-right farightarw" aria-hidden="true" />
+    //               <a href="#">Commissions</a>
+    //             </li>
+    //             <li>
+    //               <i class="fa fa-angle-right farightarw" aria-hidden="true" />
+    //               <a href="#">Rank Advancement</a>
+    //             </li>
+    //             <li>
+    //               <i class="fa fa-angle-right farightarw" aria-hidden="true" />
+    //               <a href="#">Volumes</a>
+    //             </li>
+    //           </ul>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // ));
+  };
+  showData = () => {
+    let asDt = [];
+    axios
+      .get("http://localhost:9000/load-role-byid/guest", {})
+      .then(res => {
+        console.log("JSON", res.data.submenu);
+        res.data.submenu.map(d => {
+          d.modules.map(a => {
+            console.log("JSONDate", a);
+            // http://localhost:9000/load-mod?a=["5c80ec904fdb7712d382e183", "5c810967ffee5317d35bf2fc"]
+            axios
+              .get(`http://localhost:9000/load-mod?a=${a}`, {})
+              .then(t => {
+                console.log("Data Output", t.data);
+                // this.setState({menuDt: t.data})
+                // a = t.data
+                asDt.push(t.data);
+                // this.state.menuDt({});
+                this.setState({menuDt: t.data})
+                // t.data.map(ak => a.push(ak.menuName));
+              })
+              .catch(e => {
+                throw e;
+              });
+          });
+        });
+        // http://localhost:9000/load-mod?a=["5c80ec904fdb7712d382e183", "5c810967ffee5317d35bf2fc"]
+      })
+      .catch(err => {
+        throw err;
+      });
+    // return this.state.menuDt.map(s => (
+    // console.log("menuList", this.state.menuDt);
+  };
+
+  dataLoad = () => {
+    // console.log("Dtasdasdtassda", this.state.menuDt);
+    return this.state.menuDt.map(k => (
+      <div>
+        <ul>
+          <li>{k.menuName}</li>
+        </ul>
       </div>
     ));
   };
+
   render() {
-    console.log("menuList", this.state.menuList);
     return (
       <div>
         <div className="row no-gutters">
@@ -94,6 +144,8 @@ export default class SidenavBar extends Component {
                   </div>
                 </div>
                 {this.loadSideNav()}
+                {this.showData()}
+
                 {/* <div className="card">
                   <div className="card-header cardpdng" id="headingTwo">
                     <h5 className="mb-0">
@@ -539,6 +591,11 @@ export default class SidenavBar extends Component {
                     aria-hidden="true"
                   />
                   <span className="header1"> Dashboard </span>
+                  {/* <p>ssss</p>
+                  {this.state.menuDt.map(k => (
+                    <p>{k.menuName}</p>
+                  ))}
+                  {this.dataLoad()} */}
                 </div>
                 <div className="col-12" />
               </div>
