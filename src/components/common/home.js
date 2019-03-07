@@ -5,6 +5,7 @@ import logo from "../../assets/logo.png";
 import UserRegistration from './registration';
 import AdminMenu from './addMenu';
 import ModulesList from './moduleList';
+import Roles from './roles'
 
 const usersJson = [
   {
@@ -123,7 +124,7 @@ export default class Home extends Component {
                     aria-controls="pills-contact"
                     aria-selected="false"
                   >
-                    Contact Us
+                    Roles
                   </a>
                 </li>
                 <li className="nav-item">
@@ -247,11 +248,8 @@ export default class Home extends Component {
                 <div className="container">
                   <div className="row contentpdng">
                     <div className="col-sm-12">
-                      <h3>Contact Us</h3>
-                      <p>Yoofoo technologies</p>
-                      <p>
-                        Yoofoo technologies
-                      </p>
+                      <h3>Roles</h3>
+                      <Roles />                      
                     </div>
                   </div>
                 </div>
