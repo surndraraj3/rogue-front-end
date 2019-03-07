@@ -8,10 +8,61 @@ export default class SidenavBar extends Component {
         return (
             <div>
                 <div className="row no-gutters">
-                    <div className="col-xs-12 col-sm-6 col-md-2 logobr">
-                        <img src={logo} className="App-logo" alt="logo" />
+
+                    <div className="col-xs-12 col-sm-6 col-md-10" />
+                    <div className="col-md-12">
+                        <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-light navbar-fixed-top navbar-inverse">
+                            <a class="navbar-brand" href="#">  <img src={logo} className="App-logo" alt="logo" /></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon togglericon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse headerbg" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">
+                                            <i class="fa fa-align-justify"></i>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <ul class="navbar-nav navlpdng">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fa fa-envelope navicons" aria-hidden="true"></i>
+                                            <span class="badge badge-info cartitem">12</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fa fa-bell navicons"></i>
+                                            <span class="badge badge-success cartitem">4</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="../../assets/281.png" className="rounded-circle profileicon1"></img> Amanda Leahy
+        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                         
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fa fa-shopping-cart navicons"></i> My Cart
+            <span class="badge badge-primary cartitem">5</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </nav>
+
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-10 headerbg" />
+
                 </div>
                 <div className="col-sm-12 col-lg-12 contentbox">
                     <div className="row">
@@ -209,10 +260,10 @@ export default class SidenavBar extends Component {
 
                         </div>
                         <div className="col-10 col-sm-6 col-md-10">
-                            <div className="row cardpdng">
+                            <div className="row cardpdng1">
                                 <div className="col-12"><i className="fa fa-angle-double-right arrowdbl" aria-hidden="true"></i><span className="header1"> Dashboard </span></div>
                                 <div className="col-12">
-                                    <div className="row cardpdng">
+                                    <div className="row cardpdng1">
                                         <div className="col-md-4">
                                             <div className="card mb-4 box-shadow">
                                                 <div className="card-header cardheaderbg">
