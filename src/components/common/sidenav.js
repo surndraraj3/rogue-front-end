@@ -69,8 +69,10 @@ export default class SidenavBar extends Component {
   };
   showData = () => {
     let asDt = [];
+    const roleType = localStorage.getItem('role_name');
+    console.log('roleType', roleType, `http://localhost:9000/load-role-byid/${roleType}`);
     axios
-      .get("http://localhost:9000/load-role-byid/guest", {})
+      .get(`http://localhost:9000/load-role-byid/${roleType}`, {})
       .then(res => {
         console.log("JSON", res.data.submenu);
         res.data.submenu.map(d => {

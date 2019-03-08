@@ -31,6 +31,7 @@ const usersJson = [
   {
     username: "vikram",
     password: "123",
+    role: 'guest',
     menuList: ["Organisation", "Resources", "Store", "Company News"]
   }
 ];
@@ -52,6 +53,7 @@ export default class Home extends Component {
         let path = `modules`;
         this.props.history.push(path);
         localStorage.setItem("UserDetails", JSON.stringify(userDt.menuList));
+        localStorage.setItem("role_name", userDt.role);
       } else {
         this.setState({ errMsgLoginStatus: true });
       }
